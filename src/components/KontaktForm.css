@@ -1,0 +1,20 @@
+.kontakt {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* två lika breda kolumner */
+  gap: 48px;
+  max-width: 900px;
+  margin: 80px auto;
+  padding: 0 24px;
+}
+
+.kontakt-form {
+  display: flex;
+  flex-direction: column; /* fälten under varandra */
+  gap: 8px;
+}
+
+@media (max-width: 800px) {
+  .kontakt {
+    grid-template-columns: 1fr; /* en kolumn på mobil */
+  }
+}

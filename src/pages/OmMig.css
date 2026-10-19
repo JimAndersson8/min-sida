@@ -1,0 +1,30 @@
+.omMig {
+  padding: 2rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.rubrik {
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
+  color: #6d95d5;
+}
+
+.text {
+  line-height: 1.6;
+  color: #6d95d5;
+}
+
+.underrubrik {
+  font-size: 1.25rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: #6d95d5;
+}
+
+.lista {
+  line-height: 1.8;
+  color: #6d95d5;
+  padding-left: 1.25rem;
+  list-style: none; 
+}

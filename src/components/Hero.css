@@ -1,0 +1,78 @@
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 40px;
+  padding: 64px 32px 72px;
+  text-align: left;
+  background-color: #8EB5D0;
+  color: #3e3a4e;
+}
+
+
+.hero-innehall {
+  min-width: 0;
+}
+
+.hero-bild {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.hero-intro {
+  margin: 0 0 16px;
+  color: #2a54a1;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.hero h2 {
+  max-width: 20ch;
+  margin: 0 0 24px;
+  color: #261f3a;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+.hero-text {
+  max-width: 55ch;
+  margin: 0 0 32px;
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+.hero-knapp {
+  display: inline-block;
+  padding: 12px 24px;
+  border-radius: 10px;
+  background-color: #2a54a1;
+  color: #fcf6fa;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.hero-knapp:hover {
+  background-color: #6996e7;
+}
+
+.hero-knapp:focus-visible {
+  outline: 3px solid #3e79e7;
+  outline-offset: 4px;
+}
+
+@media (max-width: 800px) {
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero {
+    padding: 40px 20px 48px;
+  }
+}

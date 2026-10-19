@@ -1,0 +1,13 @@
+.knapp {
+  display: inline-block;
+  padding: 12px 24px;
+  margin: 8px;
+  border-radius: 8px;
+  background-color: #1e293b;
+  color: white;
+  text-decoration: none;
+}
+
+.knapp:hover {
+  background-color: #334155;
+}

@@ -1,0 +1,27 @@
+.navbar {
+  display: flex;                    
+  justify-content: space-between;   
+  align-items: center;
+  padding: 16px 32px;
+  background-color: #8EB5D0;
+}
+
+.logo {
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.lankar {
+  display: flex;
+  gap: 24px;                        
+}
+
+.lankar a {
+  color: white;
+  text-decoration: none;            
+}
+
+.lankar a:hover {
+  text-decoration: underline;
+}

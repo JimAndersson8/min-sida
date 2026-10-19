@@ -1,0 +1,11 @@
+.projekt {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  align-items: start;
+  padding: 48px 32px 64px;   /* ← det här är nytt */
+}
+
+.projekt > h2 {
+  grid-column: 1 / -1;
+}
