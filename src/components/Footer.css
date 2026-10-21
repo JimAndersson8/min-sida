@@ -4,8 +4,8 @@
   align-items: center;
   gap: 2rem;
   padding: 32px 20px;
-  background-color: #1e293b;
-  color: white;
+  background-color: var(--mork);  /* var #1e293b */
+  color: var(--vit);              /* var white */
 }
 
 .footer-info {
@@ -18,7 +18,7 @@
 }
 
 .footer-lankar a {
-  color: white;
+  color: var(--vit);              /* var white */
   text-decoration: none;
 }
 

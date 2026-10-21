@@ -1,25 +1,39 @@
+/* ============================================================
+   Färgtema – EN plats för hela sidans färger.
+   Ändra ett värde här, så följer hela sidan med.
+   ============================================================ */
 :root {
-  --text: #6b6375;
-  --text-h: #08060d;
-  --bg: #fff;
-  --border: #e5e4e7;
-  --code-bg: #f4f3ec;
-  --accent: #aa3bff;
-  --accent-bg: rgba(170, 59, 255, 0.1);
-  --accent-border: rgba(170, 59, 255, 0.5);
-  --social-bg: rgba(244, 243, 236, 0.5);
-  --shadow:
-    rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
+  /* ── Lager 1: själva färgskalan, 8 steg ljus → mörk ── */
+  --vit: var(--bla-0);        /* text på färgade/mörka ytor */
+  --bla-0: #ffffff;
+  --bla-1: #c9d6df;
+  --bla-2: #92adc0;
+  --bla-3: #5c84a0;
+  --bla-4: #38607b;
+  --bla-5: #254052;
+  --bla-6: #132029;
+  --bla-7: #000000;
 
+  /* ── Lager 2: roller – vad färgen används till ── */
+  --bakgrund: var(--bla-0);   /* sidans botten */
+  --yta: var(--bla-1);        /* ljusa block, fält, kodrutor */
+  --kant: var(--bla-2);       /* kantlinjer och avdelare */
+  --primar: var(--bla-3);     /* navbar, knappar */
+  --primar-mork: var(--bla-4);/* hover, länkar, sekundär text */
+  --text: var(--bla-5);       /* brödtext */
+  --text-h: var(--bla-6);     /* rubriker */
+  --mork: var(--bla-6);       /* footer och mörka block */
+  --svart: var(--bla-7);
+
+  /* ── Typografi ── */
   --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
   --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
   --mono: ui-monospace, Consolas, monospace;
 
   font: 18px/145% var(--sans);
   letter-spacing: 0.18px;
-  color-scheme: light dark;
   color: var(--text);
-  background: var(--bg);
+  background: var(--bakgrund);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -27,26 +41,6 @@
 
   @media (max-width: 1024px) {
     font-size: 16px;
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --text: #9ca3af;
-    --text-h: #f3f4f6;
-    --bg: #16171d;
-    --border: #2e303a;
-    --code-bg: #1f2028;
-    --accent: #c084fc;
-    --accent-bg: rgba(192, 132, 252, 0.15);
-    --accent-border: rgba(192, 132, 252, 0.5);
-    --social-bg: rgba(47, 48, 58, 0.5);
-    --shadow:
-      rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
-  }
-
-  #social .button-icon {
-    filter: invert(1) brightness(2);
   }
 }
 
@@ -59,7 +53,7 @@ body {
   max-width: 100%;
   margin: 0 auto;
   text-align: center;
-  border-inline: 1px solid var(--border);
+  border-inline: 1px solid var(--kant);
   min-height: 100svh;
   display: flex;
   flex-direction: column;
@@ -82,6 +76,7 @@ h1 {
     margin: 20px 0;
   }
 }
+
 h2 {
   font-size: 24px;
   line-height: 118%;
@@ -91,6 +86,7 @@ h2 {
     font-size: 20px;
   }
 }
+
 p {
   margin: 0;
 }
@@ -107,5 +103,5 @@ code {
   font-size: 15px;
   line-height: 135%;
   padding: 4px 8px;
-  background: var(--code-bg);
+  background: var(--yta);
 }

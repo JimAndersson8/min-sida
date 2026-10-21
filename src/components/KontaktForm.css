@@ -1,20 +1,101 @@
 .kontakt {
+  --falt-bg: #8EB5D0;        /* ljust mint i fälten */
+  --falt-kant: #8EB5D0;      /* kantlinje runt fälten */
+  --knapp-bg: #265473;       /* terrakotta på knappen */
+  --knapp-bg-hover: #8EB5D0;
+  --text-mork: #ffffff;
+  --falt-text: #000000;      /* rubrik och etiketter */
+
   display: grid;
-  grid-template-columns: 1fr 1fr; /* två lika breda kolumner */
-  gap: 48px;
+  grid-template-columns: 1fr 1.2fr; /* text lite smalare än formuläret */
+  gap: 64px;
+  align-items: start;
   max-width: 900px;
-  margin: 80px auto;
+  margin: 72px auto;
   padding: 0 24px;
+  text-align: left;          /* viktigt: #root har text-align: center */
+}
+
+.kontakt-info h2 {
+  font-size: 28px;
+  color: var(--text-mork);
+  margin-bottom: 12px;
+}
+
+.kontakt-info p {
+  color: #ffffff;
+  line-height: 1.6;
+  max-width: 30ch;
 }
 
 .kontakt-form {
   display: flex;
-  flex-direction: column; /* fälten under varandra */
-  gap: 8px;
+  flex-direction: column;
+  gap: 6px;                  /* litet avstånd mellan etikett och fält */
+}
+
+.kontakt-form label {
+  margin-top: 14px;          /* större avstånd mellan fältgrupperna */
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-mork);
+}
+
+.kontakt-form label:first-of-type {
+  margin-top: 0;
+}
+
+.kontakt-form input,
+.kontakt-form textarea {
+  width: 100%;
+  box-sizing: border-box;    /* annars blir fälten bredare än kolumnen */
+  padding: 12px 14px;
+  font: inherit;             /* ärver typsnitt från sidan */
+  font-size: 16px;
+  color: var(--text-mork);
+  background-color: var(--falt-bg);
+  border: 1px solid var(--falt-kant);
+  color: var(--falt-text);
+  border-radius: 8px;
+}
+
+.kontakt-form input {
+  height: 46px;
+}
+
+.kontakt-form textarea {
+  min-height: 130px;
+  resize: vertical;          /* användaren får bara dra i höjdled */
+}
+
+.kontakt-form input:focus,
+.kontakt-form textarea:focus {
+  outline: 2px solid var(--knapp-bg);
+  outline-offset: 1px;
+}
+
+.kontakt-form button {
+  align-self: flex-start;    /* knappen blir så bred som texten, inte full bredd */
+  margin-top: 20px;
+  padding: 12px 32px;
+  font: inherit;
+  font-size: 16px;
+  color: #fff;
+  background-color: var(--knapp-bg);
+  border: none;
+  border-radius: 16px;      /* pill-form */
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.kontakt-form button:hover {
+  background-color: var(--knapp-bg-hover);
 }
 
 @media (max-width: 800px) {
   .kontakt {
     grid-template-columns: 1fr; /* en kolumn på mobil */
+    gap: 32px;
+    margin: 48px auto;
   }
 }
