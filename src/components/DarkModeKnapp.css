@@ -1,0 +1,13 @@
+.dark-mode-knapp {
+  background-color: transparent;
+  color: var(--tekst-pa-mork);
+  border: 1px solid var(--tekst-pa-mork);
+  border-radius: 4px;
+  padding: 4px 10px;
+  font: inherit;
+  cursor: pointer;
+}
+
+.dark-mode-knapp:hover {
+  text-decoration: underline;
+}

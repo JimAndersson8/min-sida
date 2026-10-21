@@ -7,7 +7,7 @@ function Footer() {
   return (
     <footer className="footer" id="kontakt">
       <div className="footer-info">
-        <p>Kontakt: jim.and79sweden@gmail.com.se</p>
+        <p>Kontakt: jim.and79sweden@gmail.com</p>
         <p>© {år} Jim Andersson</p>
       </div>
 

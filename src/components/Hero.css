@@ -5,7 +5,7 @@
   gap: 40px;
   padding: 64px 32px 72px;
   text-align: left;
-  background: linear-gradient(160deg, var(--yta), var(--kant));   /* mjuk toning, ljus till medel */
+  background: var(--sida-gradient);   /* mjuk toning, ljus till medel */
   color: var(--text-h);
 }
 
@@ -19,13 +19,6 @@
   width: 100%;
   height: auto;
   border-radius: 8px;
-}
-
-.hero-intro {
-  margin: 0 0 16px;
-  color: var(--text);
-  font-size: 18px;
-  font-weight: 600;
 }
 
 .hero h2 {

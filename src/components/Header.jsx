@@ -1,12 +1,11 @@
 import './Header.css';
 import Knapp from './Knapp';
 
-function Header({ namn, titel }) {
+function Header({ namn }) {
   return (
     <header className="header">
       <div className="header-text">
-        <h1>{namn}</h1>
-        <p>{titel}</p>
+        <h1>Hej, jag heter {namn}!</h1>
       </div>
       <div className="header-knappar">
         <Knapp text="Se mina projekt" lank="#projekt" />
@@ -16,4 +15,4 @@ function Header({ namn, titel }) {
   );
 }
 
-export default Header;
+export default Header;

@@ -1,11 +1,10 @@
 import "./Hero.css";
 import herobild from "../assets/Hero1.png";
 
-function Hero({ namn }) {
+function Hero() {
   return (
     <section className="hero" aria-labelledby="hero-titel">
       <div className="hero-innehall">
-        <p className="hero-intro">Hej, jag heter {namn}!</p>
         <h2 id="hero-titel">Jag lär mig att bygga för webben.</h2>
         <p className="hero-text">
           Välkommen till min portfolio. Här delar jag det jag lär

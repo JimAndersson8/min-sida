@@ -14,11 +14,12 @@
 
 .lankar {
   display: flex;
+  align-items: center;
   gap: 24px;                        
 }
 
 .lankar a {
-  color: var(--yta);
+  color: var(--tekst-pa-mork);
   text-decoration: none;            
 }
 

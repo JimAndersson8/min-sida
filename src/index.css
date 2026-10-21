@@ -24,6 +24,13 @@
   --text-h: var(--bla-6);     /* rubriker */
   --mork: var(--bla-6);       /* footer och mörka block */
   --svart: var(--bla-7);
+  --tekst-pa-mork: var(--yta); /* text på mörka ytor, t.ex. navbar och footer */
+  --ljus-block: var(--bla-3);     /* blått block, t.ex. footer och kontaktruta */
+  --footer-bg: var(--bla-2);      /* footerns bakgrund, ljust läge: #92ADC0 */
+  --footer-text: var(--bla-6);    /* footerns text, ljust läge: mörk */
+  --text-pa-ljus: var(--bla-0);   /* vit text på blå block, läsbar i båda lägen */
+  --falt-kant: var(--svart);      /* kant i formulärfält, ljust läge: svart */
+  --sida-gradient: linear-gradient(160deg, var(--yta), var(--kant)); /* samma toning som hero */
 
   /* ── Typografi ── */
   --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
@@ -42,6 +49,20 @@
   @media (max-width: 1024px) {
     font-size: 16px;
   }
+}
+
+/* Mörkt läge: läggs på <html> av DarkModeKnapp. Ändrar bara rollerna. */
+.dark {
+  --bakgrund: var(--bla-6);
+  --yta: var(--bla-5);
+  --kant: var(--bla-4);
+  --text: var(--bla-1);
+  --text-h: var(--bla-0);
+  --mork: var(--bla-7);
+  --tekst-pa-mork: var(--bla-1);
+  --falt-kant: var(--vit);        /* kant i formulärfält, mörkt läge: vit */
+  --footer-bg: var(--bla-4);      /* footerns bakgrund, mörkt läge: #38607B */
+  --footer-text: var(--bla-0);    /* footerns text, mörkt läge: vit */
 }
 
 body {
@@ -104,4 +125,4 @@ code {
   line-height: 135%;
   padding: 4px 8px;
   background: var(--yta);
-}
+}

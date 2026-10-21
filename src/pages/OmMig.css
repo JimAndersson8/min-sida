@@ -1,7 +1,20 @@
 .omMig {
-  padding: 2rem;
-  max-width: 700px;
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 48px;
+  align-items: start;
+  max-width: 900px;
   margin: 0 auto;
+  padding: 2rem 32px;
+  text-align: left;          /* viktigt: #root har text-align: center */
+}
+
+.omMig-intressen {
+  text-align: center;
+}
+
+#root:has(.omMig) {
+  background: var(--sida-gradient);
 }
 
 .rubrik {
@@ -17,7 +30,7 @@
 
 .underrubrik {
   font-size: 1.25rem;
-  margin-top: 1.5rem;
+  margin-top: 0;
   margin-bottom: 0.5rem;
   color: var(--text-h); /* var #6d95d5 */
 }
@@ -25,6 +38,17 @@
 .lista {
   line-height: 1.8;
   color: var(--text); /* var #6d95d5 */
-  padding-left: 1.25rem;
-  list-style: none; 
+  padding-left: 0;
+  list-style: none;
+}
+
+@media (max-width: 700px) {
+  .omMig {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .omMig-intressen {
+    text-align: left;
+  }
 }

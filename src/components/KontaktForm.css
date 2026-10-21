@@ -1,9 +1,8 @@
 .kontakt {
   --falt-bg: var(--yta);           /* ljus yta i fälten */
-  --falt-kant: var(--kant);        /* kantlinje runt fälten */
   --knapp-bg: var(--primar-mork);  /* knappen, som övriga sidan */
   --knapp-bg-hover: var(--primar); /* knapp vid hover, som övriga sidan */
-  --text-mork: var(--yta);         /* text på mörka ytor */
+  --text-mork: var(--text-pa-ljus);         /* text på mörka ytor */
   --falt-text: var(--text-h);      /* text i fälten */
 
   display: grid;
@@ -13,7 +12,7 @@
   max-width: 900px;
   margin: 72px auto;
   padding: 48px 24px;
-  background-color: var(--mork);   /* mörk ruta, så att knappen syns tydligt */
+  background-color: var(--ljus-block);   /* ljusblå ruta, så att knappen syns tydligt */
   border-radius: 16px;
   text-align: left;          /* viktigt: #root har text-align: center */
 }
@@ -103,5 +102,5 @@
 }
 
 #root:has(.kontakt) {
-  background-color: var(--yta);   /* ljusblå sida runt kontaktrutan i stället för vit */
+  background: var(--sida-gradient);
 }

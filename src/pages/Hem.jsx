@@ -5,8 +5,8 @@ import Projekt from "../components/Projekt";
 function Hem() {
   return (
     <>
-      <Header namn="Hej" />
-      <Hero namn="Jim" />
+      <Header namn="Jim" />
+      <Hero />
       <Projekt />
     </>
   );
