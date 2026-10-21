@@ -2,9 +2,14 @@
   display: flex;
   flex-direction: column;
   padding: 20px;
-  border: 1px solid #ddd;
+  background-color: var(--bakgrund);   /* ljust kort som flyter ovanpå den mörkare sektionen */
+  border: 1px solid var(--kant);
   border-radius: 12px;
   aspect-ratio: 5 / 7;
+}
+
+.projekt-kort h3 {
+  color: var(--text-h);
 }
 
 .teknik {
@@ -13,5 +18,5 @@
   font-size: 16px;      /* ← ändrad: 14px → 16px (större text) */
   padding: 8px 16px;    /* ← ändrad: 4px 10px → 8px 16px (större märke) */
   border-radius: 12px;
-  background-color: #e0f2fe;
+  background-color: var(--yta); /* var #e0f2fe */
 }

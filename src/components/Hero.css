@@ -5,8 +5,8 @@
   gap: 40px;
   padding: 64px 32px 72px;
   text-align: left;
-  background-color: #8EB5D0;
-  color: #3e3a4e;
+  background: linear-gradient(160deg, var(--yta), var(--kant));   /* mjuk toning, ljus till medel */
+  color: var(--text-h);
 }
 
 
@@ -23,7 +23,7 @@
 
 .hero-intro {
   margin: 0 0 16px;
-  color: #2a54a1;
+  color: var(--text);
   font-size: 18px;
   font-weight: 600;
 }
@@ -31,7 +31,7 @@
 .hero h2 {
   max-width: 20ch;
   margin: 0 0 24px;
-  color: #261f3a;
+  color: var(--text-h); /* var #261f3a */
   font-size: 40px;
   font-weight: 700;
   line-height: 1.15;
@@ -49,18 +49,18 @@
   display: inline-block;
   padding: 12px 24px;
   border-radius: 10px;
-  background-color: #2a54a1;
-  color: #fcf6fa;
+  background-color: var(--primar-mork);
+  color: var(--vit);
   font-weight: 600;
   text-decoration: none;
 }
 
 .hero-knapp:hover {
-  background-color: #6996e7;
+  background-color: var(--primar);
 }
 
 .hero-knapp:focus-visible {
-  outline: 3px solid #3e79e7;
+  outline: 3px solid var(--primar-mork);
   outline-offset: 4px;
 }
 

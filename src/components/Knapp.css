@@ -3,11 +3,11 @@
   padding: 12px 24px;
   margin: 8px;
   border-radius: 8px;
-  background-color: #1e293b;
-  color: white;
+  background-color: var(--primar-mork);
+  color: var(--vit);
   text-decoration: none;
 }
 
 .knapp:hover {
-  background-color: #334155;
+  background-color: var(--primar);
 }

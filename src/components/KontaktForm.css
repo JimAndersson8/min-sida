@@ -1,10 +1,10 @@
 .kontakt {
-  --falt-bg: #8EB5D0;        /* ljust mint i fälten */
-  --falt-kant: #8EB5D0;      /* kantlinje runt fälten */
-  --knapp-bg: #265473;       /* terrakotta på knappen */
-  --knapp-bg-hover: #8EB5D0;
-  --text-mork: #ffffff;
-  --falt-text: #000000;      /* rubrik och etiketter */
+  --falt-bg: var(--yta);           /* ljus yta i fälten */
+  --falt-kant: var(--kant);        /* kantlinje runt fälten */
+  --knapp-bg: var(--primar-mork);  /* knappen, som övriga sidan */
+  --knapp-bg-hover: var(--primar); /* knapp vid hover, som övriga sidan */
+  --text-mork: var(--yta);         /* text på mörka ytor */
+  --falt-text: var(--text-h);      /* text i fälten */
 
   display: grid;
   grid-template-columns: 1fr 1.2fr; /* text lite smalare än formuläret */
@@ -12,7 +12,9 @@
   align-items: start;
   max-width: 900px;
   margin: 72px auto;
-  padding: 0 24px;
+  padding: 48px 24px;
+  background-color: var(--mork);   /* mörk ruta, så att knappen syns tydligt */
+  border-radius: 16px;
   text-align: left;          /* viktigt: #root har text-align: center */
 }
 
@@ -23,7 +25,7 @@
 }
 
 .kontakt-info p {
-  color: #ffffff;
+  color: var(--text-mork);
   line-height: 1.6;
   max-width: 30ch;
 }
@@ -70,7 +72,7 @@
 
 .kontakt-form input:focus,
 .kontakt-form textarea:focus {
-  outline: 2px solid var(--knapp-bg);
+  outline: 2px solid var(--kant);
   outline-offset: 1px;
 }
 
@@ -80,7 +82,7 @@
   padding: 12px 32px;
   font: inherit;
   font-size: 16px;
-  color: #fff;
+  color: var(--vit);
   background-color: var(--knapp-bg);
   border: none;
   border-radius: 16px;      /* pill-form */
@@ -98,4 +100,8 @@
     gap: 32px;
     margin: 48px auto;
   }
+}
+
+#root:has(.kontakt) {
+  background-color: var(--yta);   /* ljusblå sida runt kontaktrutan i stället för vit */
 }

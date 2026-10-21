@@ -3,11 +3,11 @@
   justify-content: space-between;   
   align-items: center;
   padding: 16px 32px;
-  background-color: var(--primar);  /* var #8EB5D0 */
+  background-color: var(--primar-mork);   /* samma blå som knapparna */
 }
 
 .logo {
-  color: var(--vit);                /* var white */
+  color: var(--vit);
   font-size: 20px;
   font-weight: bold;
 }
@@ -18,7 +18,7 @@
 }
 
 .lankar a {
-  color: var(--vit);                /* var white */
+  color: var(--yta);
   text-decoration: none;            
 }
 

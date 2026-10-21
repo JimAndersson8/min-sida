@@ -1,7 +1,8 @@
 .header {
   text-align: left;
   padding: 48px 32px;
-  background-color: #265473;
+  background-color: var(--yta);   /* steget under navbarn, fortfarande ljust */
+  color: var(--text-h);
   display: flex;
   flex-direction: column;
   align-items: flex-start;

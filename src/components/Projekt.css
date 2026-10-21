@@ -4,8 +4,10 @@
   gap: 24px;
   align-items: start;
   padding: 48px 32px 64px;   /* ← det här är nytt */
+  background: linear-gradient(180deg, var(--kant), var(--primar));   /* fortsätter där heron slutar */
 }
 
 .projekt > h2 {
   grid-column: 1 / -1;
+  color: var(--text-h);
 }
