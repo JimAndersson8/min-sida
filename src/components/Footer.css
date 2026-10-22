@@ -20,8 +20,12 @@
 .footer-lankar a {
   color: var(--footer-text);
   text-decoration: none;
+  padding: 2px 6px;                 /* ytan som ljusnar vid hover */
+  border-radius: 6px;
 }
 
 .footer-lankar a:hover {
+  background-color: var(--bla-1);   /* ljus markering, ger ljusare yta i båda lägen */
+  color: var(--bla-6);              /* mörk text på ljus yta (11,2:1) */
   text-decoration: underline;
 }

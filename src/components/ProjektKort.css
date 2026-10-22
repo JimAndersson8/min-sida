@@ -7,6 +7,12 @@
   border: 1px solid var(--kant);
   border-radius: 12px;
   aspect-ratio: 5 / 7;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);  /* skugga under kortet */
+  transition: transform 0.2s;                  /* gör lyftet mjukt */
+}
+
+.projekt-kort:hover {
+  transform: translateY(-4px);                 /* kortet lyfts vid hover */
 }
 
 .projekt-bild {
@@ -33,5 +39,5 @@
   padding: 8px 16px;    /* ← ändrad: 4px 10px → 8px 16px (större märke) */
   border-radius: 12px;
   color: var(--bla-6);
-  background-color: var(--bla-1);
+  background-color: var(--bla-2); /* #92ADC0 i både ljust och mörkt läge */
 }

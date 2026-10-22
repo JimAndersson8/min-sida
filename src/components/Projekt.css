@@ -11,3 +11,31 @@
   grid-column: 1 / -1;
   color: var(--text-h);
 }
+
+/* Korten ligger i ett eget grid, så att de blir tre per rad */
+.projekt-lista {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.projekt-sok {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  text-align: left;
+}
+
+.projekt-sok input {
+  width: 280px;
+  padding: 10px 14px;
+  font: inherit;
+  font-size: 16px;
+  color: var(--text-h);
+  background-color: var(--bakgrund);
+  border: 1px solid var(--falt-kant);
+  border-radius: 8px;
+}
