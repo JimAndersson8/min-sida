@@ -93,6 +93,23 @@
   background-color: var(--knapp-bg-hover);
 }
 
+/* Tack- och felmeddelanden ligger i en vit ruta, så att färgerna syns mot den blå bakgrunden */
+.meddelande {
+  margin-top: 16px;
+  padding: 12px 14px;
+  background-color: var(--bla-0);
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+.meddelande.tack {
+  color: #1b7a33;   /* grön, 5,4:1 mot vit */
+}
+
+.meddelande.fel {
+  color: #b00020;   /* röd, 7,3:1 mot vit */
+}
+
 @media (max-width: 800px) {
   .kontakt {
     grid-template-columns: 1fr; /* en kolumn på mobil */
