@@ -1,9 +1,13 @@
 import './Header.css';
 import Knapp from './Knapp';
+import DarkModeKnapp from './DarkModeKnapp';
 
 function Header({ namn }) {
   return (
     <header className="header">
+      <div className="header-verktyg">
+        <DarkModeKnapp />
+      </div>
       <div className="header-text">
         <h1>Hej, jag heter {namn}!</h1>
       </div>
@@ -15,4 +19,4 @@ function Header({ namn }) {
   );
 }
 
-export default Header;
+export default Header;

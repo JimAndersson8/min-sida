@@ -6,6 +6,20 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  position: relative;   /* gör att .header-verktyg placeras relativt headern */
+}
+
+/* Mörkt-läge-knappen i övre högra hörnet. Syns på alla skärmstorlekar. */
+.header-verktyg {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+}
+
+/* Mörkt-läge-knappen ärver annars färgen för navbaren, som blir osynlig mot headerns ljusa bakgrund */
+.header-verktyg .dark-mode-knapp {
+  color: var(--text-h);
+  border-color: var(--text-h);
 }
 
 .header h1 {

@@ -25,7 +25,7 @@
   --mork: var(--bla-6);       /* footer och mörka block */
   --svart: var(--bla-7);
   --tekst-pa-mork: var(--yta); /* text på mörka ytor, t.ex. navbar och footer */
-  --ljus-block: var(--bla-3);     /* blått block, t.ex. footer och kontaktruta */
+  --ljus-block: var(--bla-4);     /* blått block, t.ex. kontaktruta. Vit text på #38607B ger 6,7:1 */
   --footer-bg: var(--bla-2);      /* footerns bakgrund, ljust läge: #92ADC0 */
   --footer-text: var(--bla-6);    /* footerns text, ljust läge: mörk */
   --text-pa-ljus: var(--bla-0);   /* vit text på blå block, läsbar i båda lägen */
