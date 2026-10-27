@@ -3,11 +3,10 @@
   color: var(--tekst-pa-mork);
   border: 1px solid var(--tekst-pa-mork);
   border-radius: 4px;
-  padding: 4px 10px;
-  font: inherit;
+  padding: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
 }
 
-.dark-mode-knapp:hover {
-  text-decoration: underline;
-}

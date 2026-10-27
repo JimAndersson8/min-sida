@@ -16,8 +16,10 @@ function DarkModeKnapp() {
   }, [morkt]);
 
   return (
-    <button className="dark-mode-knapp" onClick={() => setMorkt(!morkt)}>
-      {morkt ? 'Ljust läge' : 'Mörkt läge'}
+    <button className="dark-mode-knapp" onClick={() => setMorkt(!morkt)} aria-label={morkt ? 'Ljust läge' : 'Mörkt läge'} title={morkt ? 'Ljust läge' : 'Mörkt läge'}>
+      <svg width="18" height="18" viewBox="0 0 24 24" fill={morkt ? 'currentColor' : 'none'} stroke="currentColor" strokeWidth="2" strokeLinejoin="round" aria-hidden="true">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+      </svg>
     </button>
   );
 }
