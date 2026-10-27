@@ -1,4 +1,6 @@
 import "./Footer.css";
+import "@fortawesome/fontawesome-free/css/fontawesome.css";
+import "@fortawesome/fontawesome-free/css/brands.css";
 import { Link } from "react-router-dom";
 
 function Footer() {
@@ -14,7 +16,14 @@ function Footer() {
       <div className="footer-lankar">
         <Link to="/">Hem</Link>
         <Link to="/om-mig">Om mig</Link>
-        <a href="#kontakt">Kontakt</a>
+        <a
+          href="https://github.com/JimAndersson8/min-sida"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="GitHub"
+        >
+          <i className="fa-brands fa-github" aria-hidden="true"></i>
+        </a>
       </div>
     </footer>
   );
