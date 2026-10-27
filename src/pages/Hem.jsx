@@ -1,13 +1,13 @@
 import Header from "../components/Header";
 import Hero from "../components/Hero";
-import { Link } from "react-router-dom";
+import ProjektUtdrag from "../components/ProjektUtdrag";
 
 function Hem() {
   return (
     <>
       <Header namn="Jim" />
       <Hero />
-      <p><Link to="/projekt">Se alla projekt</Link></p>
+      <ProjektUtdrag />
     </>
   );
 }

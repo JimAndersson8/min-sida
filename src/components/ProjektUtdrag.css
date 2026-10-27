@@ -1,0 +1,41 @@
+.projekt-utdrag {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 40px;
+  padding: 64px 32px;
+  background-color: var(--yta);
+  color: var(--text-h);
+}
+
+.projekt-utdrag-bild {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.projekt-utdrag h2 {
+  margin: 0 0 16px;
+  font-size: 32px;
+}
+
+.projekt-utdrag p {
+  max-width: 55ch;
+  margin: 0 0 24px;
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+@media (max-width: 800px) {
+  .projekt-utdrag {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+
+@media (max-width: 600px) {
+  .projekt-utdrag {
+    padding: 40px 20px;
+  }
+}

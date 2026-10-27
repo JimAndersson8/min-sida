@@ -12,7 +12,7 @@ function Header({ namn }) {
         <h1>Hej, jag heter {namn}!</h1>
       </div>
       <div className="header-knappar">
-        <Knapp text="Se mina projekt" lank="#projekt" />
+        <Knapp text="Se mina projekt" lank="/projekt" />
         <Knapp text="Kontakta mig" lank="#kontakt" />
       </div>
     </header>
