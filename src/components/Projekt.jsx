@@ -10,6 +10,7 @@ const projekt = [
   { id: 1, bild: bild1, filnamn: "nature1.jpg", titel: "Min sida", beskrivning: "Sidan du tittar på just nu.", teknik: "React" },
   { id: 2, bild: bild2, filnamn: "natur2.jpg", titel: "Statisk sida", beskrivning: "Min första sida i HTML och CSS.", teknik: "HTML/CSS" },
   { id: 3, bild: bild3, filnamn: "natur3.jpg", titel: "Kommer snart", beskrivning: "Mitt nästa projekt.", teknik: "React" },
+  { id: 4, bild: bild3, filnamn: "natur3.jpg", titel: "Grafiska projekt", beskrivning: "design.", teknik: "ComfyUI" }
 ];
 
 function Projekt() {

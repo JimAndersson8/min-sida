@@ -8,6 +8,7 @@ function Navbar() {
       <div className="lankar">
         <Link to="/">Hem</Link>
         <Link to="/om-mig">Om mig</Link>
+        <Link to="/projekt">Projekt</Link>
         <Link to="/kontakt">Kontakt</Link>
       </div>
     </nav>

@@ -5,6 +5,7 @@ import KontaktForm from "./components/KontaktForm.jsx";
 import Footer from "./components/Footer";
 import Hem from "./pages/Hem";
 import OmMig from "./pages/OmMig";
+import Projektlista from "./pages/Projektlista";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Hem />} />
         <Route path="/om-mig" element={<OmMig />} />
+        <Route path="/projekt" element={<Projektlista />} />
         <Route path="/kontakt" element={<KontaktForm />} />
       </Routes>
       <Footer />
