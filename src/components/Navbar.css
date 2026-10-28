@@ -3,6 +3,8 @@
   justify-content: space-between;   
   align-items: center;
   padding: 16px 32px;
+  position: relative;               /* gör att den nedfällda menyn placeras under navbarn */
+  z-index: 10;                      /* håller navbaren, och menyn i den, ovanpå headern */
   background-color: var(--primar-mork);   /* samma blå som knapparna */
 }
 
@@ -10,6 +12,11 @@
   color: var(--vit);
   font-size: 20px;
   font-weight: bold;
+}
+
+/* Hamburgerknappen syns bara på smala skärmar, se mediaregeln längst ner */
+.hamburger {
+  display: none;
 }
 
 .lankar {
@@ -26,4 +33,44 @@
 .lankar a:hover {
   color: var(--vit);                /* ljusare text vid hover, vit på blå navbar (6,7:1) */
   text-decoration: underline;
+}
+
+@media (max-width: 1000px) {
+  .navbar {
+    padding-right: 16px;
+  }
+
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 4px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  .hamburger span {
+    display: block;
+    width: 24px;
+    height: 3px;
+    border-radius: 2px;
+    background-color: var(--tekst-pa-mork);
+  }
+
+  .lankar {
+    display: none;
+  }
+
+  .lankar.oppen {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    position: absolute;
+    top: 100%;
+    right: 16px;
+    padding: 16px;
+    background-color: var(--primar-mork);
+  }
 }
