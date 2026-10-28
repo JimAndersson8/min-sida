@@ -1,0 +1,6 @@
+/* Visa mer / Visa mindre. Klassen "knapp" (Knapp.css) ger färg och hörn, här nollställs kantlinjen och markören. */
+.toggle-knapp {
+  border: none;
+  font: inherit;
+  cursor: pointer;
+}

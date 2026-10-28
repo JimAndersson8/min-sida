@@ -11,3 +11,9 @@
 .knapp:hover {
   background-color: var(--primar);
 }
+
+@media (max-width: 600px) {
+  .knapp {
+    padding: 10px 16px;
+  }
+}

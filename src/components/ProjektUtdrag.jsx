@@ -1,6 +1,6 @@
 import "./ProjektUtdrag.css";
 import Knapp from "./Knapp";
-import bild from "../assets/nature1.jpg";
+import bild from "../assets/minaprojekt.jpg";
 
 function ProjektUtdrag() {
   return (

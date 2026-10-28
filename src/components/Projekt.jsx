@@ -11,7 +11,7 @@ const projekt = [
   { id: 1, bild: bild1, filnamn: "nature1.jpg", titel: "Min sida", beskrivning: "Sidan du tittar på just nu.", teknik: "React" },
   { id: 2, bild: bild2, filnamn: "natur2.jpg", titel: "Statisk sida", beskrivning: "Min första sida i HTML och CSS.", teknik: "HTML/CSS" },
   { id: 3, bild: bild3, filnamn: "natur3.jpg", titel: "Kommer snart", beskrivning: "Mitt nästa projekt.", teknik: "React" },
-  { id: 4, bild: bild4, filnamn: "comfyui1.jpg", titel: "Grafiska projekt", beskrivning: "AI Design.", teknik: "ComfyUI" }
+  { id: 4, bild: bild4, filnamn: "comfyui1.jpg", titel: "Grafiska projekt", beskrivning: "AI Design.", teknik: "ComfyUI" },
 ];
 
 function Projekt() {
@@ -34,17 +34,21 @@ function Projekt() {
           placeholder="Skriv något..."
         />
       </div>
-      <div className="projekt-lista">
-        {synliga.map((p) => (
-          <ProjektKort
-            key={p.id}
-            bild={p.bild}
-            titel={p.titel}
-            beskrivning={p.beskrivning}
-            teknik={p.teknik}
-          />
-        ))}
-      </div>
+      {synliga.length === 0 ? (
+        <p className="projekt-tomt">Inga projekt matchar din sökning.</p>
+      ) : (
+        <div className="projekt-lista">
+          {synliga.map((p) => (
+            <ProjektKort
+              key={p.id}
+              bild={p.bild}
+              titel={p.titel}
+              beskrivning={p.beskrivning}
+              teknik={p.teknik}
+            />
+          ))}
+        </div>
+      )}
     </section>
   );
 }

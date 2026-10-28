@@ -19,6 +19,12 @@
   display: none;
 }
 
+.navbar-hoger {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
 .lankar {
   display: flex;
   align-items: center;
