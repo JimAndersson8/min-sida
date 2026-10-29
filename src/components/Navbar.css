@@ -3,7 +3,8 @@
   justify-content: space-between;   
   align-items: center;
   padding: 16px 32px;
-  position: relative;               /* gör att den nedfällda menyn placeras under navbarn */
+  position: sticky;               /* gör att den nedfällda menyn placeras under navbarn */
+  top: 0;                         /* sticky fäster bara om en kant är satt, här överkanten */
   z-index: 10;                      /* håller navbaren, och menyn i den, ovanpå headern */
   background-color: var(--primar-mork);   /* samma blå som knapparna */
 }

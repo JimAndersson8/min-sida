@@ -112,6 +112,12 @@ p {
   margin: 0;
 }
 
+/* Bilder får aldrig vara bredare än sin förälder, och behåller bildförhållandet */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
 code,
 .counter {
   font-family: var(--mono);

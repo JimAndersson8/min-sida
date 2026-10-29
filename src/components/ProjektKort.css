@@ -19,6 +19,7 @@
   flex: 1 1 0;                /* tar all ledig höjd över texten */
   min-height: 0;
   width: calc(100% + 40px);   /* går ut till kortets padding, så bara kantlinjen är kvar */
+  max-width: none;                /* upphäver den globala max-width: 100%, så bilden får gå ut till kanten */
   margin: -20px -20px 12px;
   object-fit: cover;          /* fyller rutan utan att bilden blir deformerad */
   --bild-x: 50%;              /* horisontell position: 0% vänster, 50% mitten, 100% höger */
