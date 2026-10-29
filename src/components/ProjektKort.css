@@ -39,6 +39,6 @@
   font-size: 16px;      /* ← ändrad: 14px → 16px (större text) */
   padding: 8px 16px;    /* ← ändrad: 4px 10px → 8px 16px (större märke) */
   border-radius: 12px;
-  color: var(--bla-6);
-  background-color: var(--bla-2); /* #92ADC0 i både ljust och mörkt läge */
+  color: var(--vit);
+  background-color: var(--primar-mork); /* #38607B, samma som navbaren, i både ljust och mörkt läge */
 }

@@ -33,6 +33,9 @@
 }
 
 .lankar a {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
   color: var(--tekst-pa-mork);
   text-decoration: none;            
 }
@@ -51,6 +54,11 @@
     display: flex;
     flex-direction: column;
     gap: 5px;
+    box-sizing: border-box;
+    width: 44px;
+    height: 44px;
+    justify-content: center;
+    align-items: center;
     padding: 4px;
     background: none;
     border: none;

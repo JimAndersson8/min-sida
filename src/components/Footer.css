@@ -18,6 +18,9 @@
 }
 
 .footer-lankar a {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
   color: var(--footer-text);
   text-decoration: none;
   white-space: nowrap;   /* "Om mig" ska alltid stå på en rad */
@@ -30,6 +33,11 @@
 
 .dark .footer-lankar a:hover {
   color: var(--footer-text);        /* mörkt läge: texten är redan vit, så den ändras inte */
+}
+
+.footer-lankar a[href^="https://github.com"]:hover {
+  color: var(--footer-text);        /* GitHub-ikonen ska inte ha hover-effekt */
+  text-decoration: none;
 }
 
 /* Mobil och smala skärmar: texten överst, länkarna under och centrerade */

@@ -22,7 +22,7 @@ function Footer() {
           rel="noopener noreferrer"
           aria-label="GitHub"
         >
-          <i className="fa-brands fa-github" aria-hidden="true"></i>
+          <i className="fa-brands fa-github fa-lg" aria-hidden="true"></i>
         </a>
       </div>
     </footer>
