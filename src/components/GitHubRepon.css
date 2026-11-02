@@ -14,28 +14,36 @@
 
 .github-kort {
   padding: 20px;
-  border-radius: 8px;
-  background-color: var(--bakgrund);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+  border-radius: 12px;
+  background-color: var(--bla-6);        /* samma mörka kort som projektkorten */
+  color: var(--bla-0);                   /* ljus text på mörkt kort */
+  border: 1px solid var(--kant);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  transition: transform 0.2s;
+}
+
+.github-kort:hover {
+  transform: translateY(-4px);           /* kortet lyfts vid hover, som projektkorten */
 }
 
 .github-kort h3 {
   margin: 0 0 8px;
   font-size: 18px;
+  color: var(--bla-0);
 }
 
 .github-kort a {
-  color: var(--primar-mork);
+  color: var(--bla-1);
 }
 
 .github-sprak {
   display: inline-block;
   margin-top: 12px;
-  padding: 4px 12px;
-  border-radius: 999px;
-  background-color: var(--yta);
-  color: var(--text-h);
-  font-size: 14px;
+  padding: 8px 16px;
+  border-radius: 12px;
+  background-color: var(--primar-mork);  /* samma märke som i projektkorten */
+  color: var(--vit);
+  font-size: 16px;
   font-weight: 600;
 }
 
