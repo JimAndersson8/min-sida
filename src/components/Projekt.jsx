@@ -5,25 +5,49 @@ import bild1 from '../assets/nature1.jpg';
 import bild2 from '../assets/natur2.jpg';
 import bild3 from '../assets/natur3.jpg';
 import bild4 from '../assets/comfyui1.jpg';
+import projektLista from '../data/projekt.json';
 
-// Varje projekt får ett unikt id. Det används som key när listan ritas ut.
-const projekt = [
-  { id: 1, bild: bild1, filnamn: "nature1.jpg", titel: "Min sida", beskrivning: "Sidan du tittar på just nu.", teknik: "React" },
-  { id: 2, bild: bild2, filnamn: "natur2.jpg", titel: "Statisk sida", beskrivning: "Min första sida i HTML och CSS.", teknik: "HTML/CSS" },
-  { id: 3, bild: bild3, filnamn: "natur3.jpg", titel: "Kommer snart", beskrivning: "Mitt nästa projekt.", teknik: "React" },
-  { id: 4, bild: bild4, filnamn: "comfyui1.jpg", titel: "Grafiska projekt", beskrivning: "AI Design.", teknik: "ComfyUI" },
-];
+// JSON kan bara innehålla data, inte variabler. Därför står bilden som en sträng
+// i projekt.json ("nature1.jpg"), och här slår vi upp vilken importerad bild den betyder.
+const bilder = {
+  "nature1.jpg": bild1,
+  "natur2.jpg": bild2,
+  "natur3.jpg": bild3,
+  "comfyui1.jpg": bild4,
+};
+
+// Knapparna ovanför korten. "Alla" visar allt.
+const filterLista = ["Alla", "React", "HTML", "CSS", "ComfyUI"];
 
 function Projekt() {
+  // Vilken filterknapp är vald, och vad står i sökrutan?
+  const [vald, setVald] = useState("Alla");
   const [sok, setSok] = useState("");
 
-  const synliga = projekt.filter((p) =>
-    `${p.titel} ${p.beskrivning} ${p.teknik} ${p.filnamn}`.toLowerCase().includes(sok.toLowerCase())
-  );
+  // Ett projekt visas bara om BÅDE knappen och sökningen stämmer.
+  const synliga = projektLista.filter((p) => {
+    const rattTeknik = vald === "Alla" || p.teknik.includes(vald);
+    const rattSok = `${p.titel} ${p.text} ${p.teknik.join(" ")} ${p.bild}`
+      .toLowerCase()
+      .includes(sok.toLowerCase());
+    return rattTeknik && rattSok;
+  });
 
   return (
     <section id="projekt" className="projekt">
       <h2>Mina projekt</h2>
+      <div className="projekt-filter">
+        {filterLista.map((f) => (
+          <button
+            key={f}
+            className={f === vald ? "filter-knapp aktiv" : "filter-knapp"}
+            onClick={() => setVald(f)}
+            aria-pressed={f === vald}
+          >
+            {f}
+          </button>
+        ))}
+      </div>
       <div className="projekt-sok">
         <label htmlFor="sok">Sök bland projekten</label>
         <input
@@ -34,17 +58,20 @@ function Projekt() {
           placeholder="Skriv något..."
         />
       </div>
+      <p className="projekt-antal">
+        Visar {synliga.length} av {projektLista.length} projekt
+      </p>
       {synliga.length === 0 ? (
-        <p className="projekt-tomt">Inga projekt matchar din sökning.</p>
+        <p className="projekt-tomt">Inga projekt matchar. Prova ett annat filter eller en annan sökning.</p>
       ) : (
         <div className="projekt-lista">
           {synliga.map((p) => (
             <ProjektKort
               key={p.id}
-              bild={p.bild}
+              bild={bilder[p.bild]}
               titel={p.titel}
-              beskrivning={p.beskrivning}
-              teknik={p.teknik}
+              beskrivning={p.text}
+              teknik={p.teknik.join(", ")}
             />
           ))}
         </div>

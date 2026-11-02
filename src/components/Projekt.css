@@ -63,3 +63,40 @@
   grid-column: 1 / -1;
   color: var(--text-h);
 }
+
+/* Filterknapparna: en rad som bryts på smala skärmar */
+.projekt-filter {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.filter-knapp {
+  min-height: 44px;                 /* lätt att träffa, samma som övriga klickytor */
+  padding: 8px 16px;
+  border: 1px solid var(--primar);
+  border-radius: 999px;
+  background-color: var(--bakgrund);
+  color: var(--text-h);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.filter-knapp:hover {
+  background-color: var(--yta);
+}
+
+/* Den valda knappen är ifylld */
+.filter-knapp.aktiv {
+  background-color: var(--primar-mork);
+  border-color: var(--primar-mork);
+  color: var(--vit);
+}
+
+.projekt-antal {
+  grid-column: 1 / -1;
+  color: var(--text);
+  font-size: 14px;
+}
