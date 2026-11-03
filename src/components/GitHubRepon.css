@@ -22,6 +22,10 @@
   transition: transform 0.2s;
 }
 
+.dark .github-kort {
+  background-color: var(--bla-4);        /* samma blå som väderkortet i mörkt läge */
+}
+
 .github-kort:hover {
   transform: translateY(-4px);           /* kortet lyfts vid hover, som projektkorten */
 }

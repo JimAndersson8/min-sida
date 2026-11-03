@@ -1,0 +1,8 @@
+/* Bakgrund bakom "Senast på GitHub" och väderkortet i ljust läge */
+.github-vader {
+  background-color: var(--bla-2);
+}
+
+.dark .github-vader {
+  background-color: transparent;
+}

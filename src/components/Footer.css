@@ -27,7 +27,7 @@
 }
 
 .footer-lankar a:hover {
-  color: var(--bla-5);              /* ljusare än #132029 i ljust läge (4,6:1 mot footerns bakgrund) */
+  color: var(--footer-text);        /* samma färg som vanlig text, hover syns på understrykningen */
   text-decoration: underline;
 }
 

@@ -33,6 +33,7 @@ function Vader() {
       {laddar && <p>Laddar vädret...</p>}
       {fel && <p role="alert">{fel}</p>}
       {vader && <p>{vader.temperature_2m} °C i Helsingborg</p>}
+      {vader && <p>Vind: {vader.wind_speed_10m} km/h</p>}
     </section>
   );
 }

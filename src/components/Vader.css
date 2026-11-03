@@ -6,10 +6,25 @@
   background-color: var(--bla-6);
   color: var(--vit);
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 200px;
+}
+
+.dark .vader {
+  background-color: var(--bla-4);
 }
 
 .vader h2 {
   margin-top: 0;
+  text-align: center;
+}
+
+.vader p {
+  font-size: 1.5rem;
+  text-align: center;
+  margin: 0.5rem 0;
 }
 
 .vader [role="alert"] {
