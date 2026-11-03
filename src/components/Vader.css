@@ -21,10 +21,35 @@
   text-align: center;
 }
 
-.vader p {
+.vader > p {
   font-size: 1.5rem;
   text-align: center;
   margin: 0.5rem 0;
+}
+
+.vader-lista {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.vader-kort {
+  padding: 12px;
+  border-radius: 8px;
+  background-color: var(--bla-5);
+}
+
+.vader-kort h3 {
+  margin: 0 0 4px;
+  font-size: 1.2rem;
+}
+
+.vader-kort p {
+  margin: 2px 0;
+  font-size: 1rem;
 }
 
 .vader [role="alert"] {
