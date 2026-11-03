@@ -1,0 +1,30 @@
+.ej-hittad {
+  max-width: 600px;
+  margin: 64px auto;
+  padding: 24px;
+  text-align: center;
+}
+
+.ej-hittad h1 {
+  font-size: 4rem;
+  margin: 0;
+}
+
+.ej-hittad-bild {
+  display: block;
+  max-width: 320px;
+  width: 100%;
+  margin: 24px auto;
+}
+
+.ej-hittad-lank {
+  display: inline-block;
+  min-height: 44px;
+  line-height: 44px;
+  padding: 0 20px;
+  border-radius: 12px;
+  background-color: var(--primar-mork);
+  color: var(--vit);
+  text-decoration: none;
+  font-weight: 600;
+}
