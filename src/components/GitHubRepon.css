@@ -15,7 +15,7 @@
 .github-kort {
   padding: 20px;
   border-radius: 12px;
-  background-color: var(--bla-6);        /* samma mörka kort som projektkorten */
+  background-color: var(--bla-5);        /* en nyans ljusare än projektkorten, ljust läge */
   color: var(--bla-0);                   /* ljus text på mörkt kort */
   border: 1px solid var(--kant);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
@@ -23,7 +23,7 @@
 }
 
 .dark .github-kort {
-  background-color: var(--bla-4);        /* samma blå som väderkortet i mörkt läge */
+  background-color: var(--bla-3);        /* ljusare än väderkortet (#38607B) i mörkt läge */
 }
 
 .github-kort:hover {
