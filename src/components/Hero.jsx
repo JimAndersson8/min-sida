@@ -14,7 +14,7 @@ function Hero() {
           Läs vidare
         </a>
       </div>
-      <img className="hero-bild" src={herobild} alt="Hero-bild" />
+      <img className="hero-bild" src={herobild} alt="Abstrakt illustration av ett kretskort" />
     </section>
   );
 }

@@ -12,7 +12,7 @@ function Navbar() {
 
   return (
     <nav className="navbar">
-      <span className="logo">Tech Talent</span>
+      <Link to="/" className="logo">Tech Talent</Link>
       <div className="navbar-hoger">
         <button
           className="hamburger"

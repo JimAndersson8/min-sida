@@ -5,7 +5,7 @@ import bild from "../assets/minaprojekt.jpg";
 function ProjektUtdrag() {
   return (
     <section className="projekt-utdrag" aria-labelledby="utdrag-titel">
-      <img className="projekt-utdrag-bild" src={bild} alt="Projektbild" />
+      <img className="projekt-utdrag-bild" src={bild} alt="Abstrakt illustration av ett kretskort" />
       <div className="projekt-utdrag-text">
         <h2 id="utdrag-titel">Mina projekt</h2>
         <p>
