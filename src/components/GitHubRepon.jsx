@@ -5,11 +5,10 @@
 
 import "./GitHubRepon.css";
 import { useState, useEffect } from "react";
+import { githubAnvandare } from "../data/installningar";
 
-// Byt till ditt eget GitHub-användarnamn
-const ANVANDARE = "JimAndersson8";
 const API_URL =
-  "https://api.github.com/users/" + ANVANDARE + "/repos?sort=updated&per_page=6";
+  "https://api.github.com/users/" + githubAnvandare + "/repos?sort=updated&per_page=6";
 
 function GitHubRepon() {
   // Tre lägen: laddar, fel och klart

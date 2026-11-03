@@ -3,12 +3,13 @@ import Hero from "../components/Hero";
 import ProjektUtdrag from "../components/ProjektUtdrag";
 import GitHubRepon from "../components/GitHubRepon";
 import Vader from "../components/Vader";
+import { fornamn } from "../data/installningar";
 import "./Hem.css";
 
 function Hem() {
   return (
     <>
-      <Header namn="Jim" />
+      <Header namn={fornamn} />
       <Hero />
       <ProjektUtdrag />
       <div className="github-vader">

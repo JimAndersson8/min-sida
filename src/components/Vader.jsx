@@ -1,11 +1,7 @@
 import "./Vader.css";
 import { useState, useEffect } from "react";
-
-const stader = [
-  { namn: "Helsingborg", lat: 56.05, lon: 12.69 },
-  { namn: "Stockholm", lat: 59.33, lon: 18.07 },
-  { namn: "Kiruna", lat: 67.86, lon: 20.23 },
-];
+import { STADER } from "../data/stader";
+import { grader } from "../utils/text";
 
 const BAS_URL = "https://api.open-meteo.com/v1/forecast";
 
@@ -34,7 +30,7 @@ function Vader() {
   useEffect(() => {
     async function hamta() {
       try {
-        const resultat = await Promise.all(stader.map(hamtaStad));
+        const resultat = await Promise.all(STADER.map(hamtaStad));
         setVader(resultat);
       } catch {
         setFel("Kunde inte hämta vädret just nu.");
@@ -54,7 +50,7 @@ function Vader() {
         {vader.map((stad) => (
           <li key={stad.namn} className="vader-kort">
             <h3>{stad.namn}</h3>
-            <p>{stad.temp} °C</p>
+            <p>{grader(stad.temp)}</p>
             <p>Vind: {stad.vind} km/h</p>
           </li>
         ))}
