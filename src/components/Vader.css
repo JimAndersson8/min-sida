@@ -21,19 +21,18 @@
   text-align: center;
 }
 
-.vader > p {
-  font-size: 1.5rem;
-  text-align: center;
-  margin: 0.5rem 0;
+.vader select {
+  display: block;
+  margin: 0.5rem auto 1rem;
+  padding: 8px;
+  border-radius: 8px;
+  border: none;
 }
 
-.vader-lista {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 12px;
-  margin: 0;
-  padding: 0;
-  list-style: none;
+.vader > p {
+  font-size: 1.2rem;
+  text-align: center;
+  margin: 0.5rem 0;
 }
 
 .vader-kort {
@@ -49,7 +48,7 @@
 
 .vader-kort p {
   margin: 2px 0;
-  font-size: 1rem;
+  font-size: 1.2rem;
 }
 
 .vader [role="alert"] {

@@ -3,6 +3,7 @@ import Hero from "../components/Hero";
 import ProjektUtdrag from "../components/ProjektUtdrag";
 import GitHubRepon from "../components/GitHubRepon";
 import Vader from "../components/Vader";
+import Todo from "../components/Todo";
 import { fornamn } from "../data/installningar";
 import "./Hem.css";
 
@@ -16,6 +17,7 @@ function Hem() {
         <GitHubRepon />
         <Vader />
       </div>
+      <Todo />
     </>
   );
 }
