@@ -23,15 +23,25 @@ function Projekt() {
   // Vilken filterknapp är vald, och vad står i sökrutan?
   const [vald, setVald] = useState("Alla");
   const [sok, setSok] = useState("");
+  const [sortering, setSortering] = useState("standard");
 
   // Ett projekt visas bara om BÅDE knappen och sökningen stämmer.
-  const synliga = projektLista.filter((p) => {
+  const synligaProjekt = projektLista.filter((p) => {
     const rattTeknik = vald === "Alla" || p.teknik.includes(vald);
     const rattSok = `${p.titel} ${p.text} ${p.teknik.join(" ")} ${p.bild}`
       .toLowerCase()
       .includes(sok.toLowerCase());
     return rattTeknik && rattSok;
   });
+
+  // Sorteringen görs på en kopia, eftersom sort() ändrar arrayen den körs på.
+  const sorteradeProjekt = [...synligaProjekt];
+
+  if (sortering === "titel") {
+    sorteradeProjekt.sort((a, b) => a.titel.localeCompare(b.titel, "sv"));
+  } else if (sortering === "teknik") {
+    sorteradeProjekt.sort((a, b) => b.teknik.length - a.teknik.length);
+  }
 
   return (
     <section id="projekt" className="projekt">
@@ -58,16 +68,29 @@ function Projekt() {
           placeholder="Skriv något..."
         />
       </div>
+      <div className="projekt-sortering">
+        <label htmlFor="sortering">Sortera efter</label>
+        <select
+          id="sortering"
+          value={sortering}
+          onChange={(e) => setSortering(e.target.value)}
+        >
+          <option value="standard">Standard</option>
+          <option value="titel">Titel (A–Ö)</option>
+          <option value="teknik">Flest tekniker</option>
+        </select>
+      </div>
       <p className="projekt-antal">
-        Visar {synliga.length} av {projektLista.length} projekt
+        Visar {sorteradeProjekt.length} av {projektLista.length} projekt
       </p>
-      {synliga.length === 0 ? (
+      {sorteradeProjekt.length === 0 ? (
         <p className="projekt-tomt">Inga projekt matchar. Prova ett annat filter eller en annan sökning.</p>
       ) : (
         <div className="projekt-lista">
-          {synliga.map((p) => (
+          {sorteradeProjekt.map((p) => (
             <ProjektKort
               key={p.id}
+              id={p.id}
               bild={bilder[p.bild]}
               titel={p.titel}
               beskrivning={p.text}

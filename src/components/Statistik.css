@@ -1,0 +1,16 @@
+.statistik-lista {
+  display: grid;
+  gap: 8px;
+  padding: 0;
+  list-style: none;
+}
+
+.statistik-lista li {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  background-color: var(--yta);
+  color: var(--text-h);
+}

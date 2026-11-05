@@ -42,3 +42,16 @@
   color: var(--vit);
   background-color: var(--primar-mork); /* #38607B, samma som navbaren, i både ljust och mörkt läge */
 }
+
+.projekt-las-mer {
+  align-self: center;
+  margin-top: 12px;
+  color: var(--vit);
+  font-weight: 600;
+  text-underline-offset: 3px;
+}
+
+.projekt-las-mer:focus-visible {
+  outline: 3px solid var(--vit);
+  outline-offset: 3px;
+}

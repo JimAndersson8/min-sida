@@ -1,0 +1,24 @@
+.projekt-detalj {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 48px 32px 64px;
+  color: var(--text-h);
+}
+
+.projekt-detalj h2 {
+  margin-top: 0;
+}
+
+.projekt-detalj ul {
+  padding-left: 1.25rem;
+}
+
+.projekt-detalj a {
+  color: var(--primar-mork);
+  font-weight: 600;
+}
+
+.projekt-detalj a:focus-visible {
+  outline: 3px solid var(--primar);
+  outline-offset: 3px;
+}

@@ -1,4 +1,5 @@
 import Toggle from '../components/Toggle';
+import Statistik from '../components/Statistik';
 import './OmMig.css';
 
 export default function OmMig() {
@@ -27,6 +28,8 @@ export default function OmMig() {
           <li>Design</li>
           <li>Musik</li>
         </ul>
+        <h3 className="underrubrik">Det här har jag använt mest</h3>
+        <Statistik />
       </div>
     </section>
   );
