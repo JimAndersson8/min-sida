@@ -3,8 +3,8 @@
   margin: 2rem auto;
   padding: 1.5rem;
   border-radius: 12px;
-  background-color: var(--bla-6);
-  color: var(--vit);
+  background-color: var(--yta);
+  color: var(--text-h);
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -23,10 +23,16 @@
 
 .vader select {
   display: block;
+  width: 280px;
+  max-width: 100%;
   margin: 0.5rem auto 1rem;
-  padding: 8px;
+  padding: 10px 14px;
+  font: inherit;
+  font-size: 16px;
+  color: var(--text-h);
+  background-color: var(--bakgrund);
+  border: 1px solid var(--falt-kant);
   border-radius: 8px;
-  border: none;
 }
 
 .vader > p {
@@ -38,7 +44,7 @@
 .vader-kort {
   padding: 12px;
   border-radius: 8px;
-  background-color: var(--bla-5);
+  background-color: var(--bakgrund);
 }
 
 .vader-kort h3 {
