@@ -69,6 +69,17 @@
   resize: vertical;          /* användaren får bara dra i höjdled */
 }
 
+.tecken-kvar {
+  margin: 0;
+  color: var(--text-mork);
+  font-size: 0.9rem;
+}
+
+.tecken-kvar.snart-slut {
+  color: #ffd6d6;
+  font-weight: 600;
+}
+
 .kontakt-form input:focus,
 .kontakt-form textarea:focus {
   outline: 2px solid var(--kant);
@@ -89,8 +100,13 @@
   transition: background-color 0.2s;
 }
 
-.kontakt-form button:hover {
+.kontakt-form button:not(:disabled):hover {
   background-color: var(--knapp-bg-hover);
+}
+
+.kontakt-form button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
 }
 
 /* Tack- och felmeddelanden ligger i en vit ruta, så att färgerna syns mot den blå bakgrunden */

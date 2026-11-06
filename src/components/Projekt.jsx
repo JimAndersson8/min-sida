@@ -16,8 +16,17 @@ const bilder = {
   "comfyui1.jpg": bild4,
 };
 
-// Knapparna ovanför korten. "Alla" visar allt.
-const filterLista = ["Alla", "React", "HTML", "CSS", "ComfyUI"];
+// Börja med knappen som visar alla projekt.
+const filterLista = ["Alla"];
+
+// Gå igenom alla projekt och samla varje teknik en gång till filterknapparna.
+for (const projekt of projektLista) {
+  for (const teknik of projekt.teknik) {
+    if (!filterLista.includes(teknik)) {
+      filterLista.push(teknik);
+    }
+  }
+}
 
 function Projekt() {
   // Vilken filterknapp är vald, och vad står i sökrutan?

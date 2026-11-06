@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import './KontaktForm.css';
 
+const MAX_TECKEN = 500;
+
 function KontaktForm() {
   // Ett state per fält. Startvärdet är en tom sträng.
   const [namn, setNamn] = useState("");
@@ -10,6 +12,10 @@ function KontaktForm() {
   // skickat: visa tackmeddelandet. fel: texten i felrutan (tom = inget fel).
   const [skickat, setSkickat] = useState(false);
   const [fel, setFel] = useState("");
+
+  // Räkna återstående tecken och kontrollera om formuläret får skickas.
+  const kvar = MAX_TECKEN - meddelande.length;
+  const fardigt = meddelande.trim() !== "" && kvar >= 0;
 
   function handleSubmit(e) {
     e.preventDefault(); // stoppa sidomladdning
@@ -71,8 +77,14 @@ function KontaktForm() {
           value={meddelande}
           onChange={(e) => setMeddelande(e.target.value)}
         ></textarea>
+        <p
+          className={kvar < 50 ? "tecken-kvar snart-slut" : "tecken-kvar"}
+          aria-live="polite"
+        >
+          {kvar} tecken kvar
+        </p>
 
-        <button type="submit">Skicka</button>
+        <button type="submit" disabled={!fardigt}>Skicka</button>
 
         {fel && <p className="meddelande fel">{fel}</p>}
         {skickat && <p className="meddelande tack">Tack för ditt meddelande {namn}, jag hör av mig!</p>}

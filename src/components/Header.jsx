@@ -5,7 +5,7 @@ function Header({ namn }) {
   return (
     <header className="header">
       <div className="header-text">
-        <h1>Hej, jag heter {namn}!</h1>
+        <h1>Hej, välkommen till min sida</h1>
       </div>
       <div className="header-knappar">
         <Knapp text="Se mina projekt" lank="/projekt" />
