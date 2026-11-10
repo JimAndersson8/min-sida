@@ -1,11 +1,12 @@
 import './Header.css';
 import Knapp from './Knapp';
+import { halsning } from "../utils/text";
 
-function Header({ namn }) {
+function Header() {
   return (
     <header className="header">
       <div className="header-text">
-        <h1>Hej, välkommen till min sida</h1>
+        <h1>{halsning()}, välkommen till min sida</h1>
       </div>
       <div className="header-knappar">
         <Knapp text="Se mina projekt" lank="/projekt" />

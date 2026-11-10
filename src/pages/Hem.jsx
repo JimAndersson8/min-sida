@@ -4,13 +4,12 @@ import ProjektUtdrag from "../components/ProjektUtdrag";
 import GitHubRepon from "../components/GitHubRepon";
 import Vader from "../components/Vader";
 import Todo from "../components/Todo";
-import { fornamn } from "../data/installningar";
 import "./Hem.css";
 
 function Hem() {
   return (
     <>
-      <Header namn={fornamn} />
+      <Header />
       <Hero />
       <ProjektUtdrag />
       <div className="github-vader">
