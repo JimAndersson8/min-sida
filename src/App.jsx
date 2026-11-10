@@ -8,6 +8,7 @@ import OmMig from "./pages/OmMig";
 import Projektlista from "./pages/Projektlista";
 import ProjektDetalj from "./pages/ProjektDetalj";
 import EjHittad from "./pages/EjHittad";
+import MinServer from "./components/MinServer.jsx";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="/projekt" element={<Projektlista />} />
         <Route path="/projekt/:id" element={<ProjektDetalj />} />
         <Route path="/kontakt" element={<KontaktForm />} />
+        <Route path="/server" element={<MinServer />} />
         <Route path="*" element={<EjHittad />} />
       </Routes>
       <Footer />
