@@ -1,7 +1,7 @@
 .kontakt {
   --falt-bg: var(--yta);           /* ljus yta i fälten */
-  --knapp-bg: var(--primar-mork);  /* knappen, som övriga sidan */
-  --knapp-bg-hover: var(--primar); /* knapp vid hover, som övriga sidan */
+  --knapp-bg: var(--bla-5);       /* mörkare blå så knappen skiljer sig från rutan */
+  --knapp-bg-hover: var(--bla-3); /* ännu ljusare blå vid hover */
   --text-mork: var(--text-pa-ljus);         /* text på mörka ytor */
   --falt-text: var(--text-h);      /* text i fälten */
 

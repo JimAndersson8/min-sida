@@ -48,7 +48,16 @@
   margin-top: 12px;
   color: var(--vit);
   font-weight: 600;
+  text-decoration: none;
   text-underline-offset: 3px;
+  transition: color 0.2s, text-decoration-thickness 0.2s;
+}
+
+.projekt-las-mer:hover,
+.projekt-las-mer:focus-visible {
+  color: var(--bla-1);
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
 }
 
 .projekt-las-mer:focus-visible {

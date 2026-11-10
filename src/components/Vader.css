@@ -25,7 +25,7 @@
   display: block;
   width: 280px;
   max-width: 100%;
-  margin: 0.5rem auto 1rem;
+  margin: 1rem auto 1rem;
   padding: 10px 14px;
   font: inherit;
   font-size: 16px;
@@ -42,7 +42,7 @@
 }
 
 .vader-kort {
-  padding: 12px;
+  padding: 24px;
   border-radius: 8px;
   background-color: var(--bakgrund);
 }

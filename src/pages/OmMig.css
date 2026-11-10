@@ -51,6 +51,10 @@
   color: var(--vit);
 }
 
+.lista + .underrubrik {
+  margin-top: 1.5rem;
+}
+
 @media (max-width: 700px) {
   .omMig {
     grid-template-columns: 1fr;
