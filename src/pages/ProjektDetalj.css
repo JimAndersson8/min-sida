@@ -10,12 +10,34 @@
 }
 
 .projekt-detalj ul {
-  padding-left: 1.25rem;
+  display: table;
+  margin: 0 auto 1rem;
+  padding: 0;
+  list-style: none;
 }
 
 .projekt-detalj a {
   color: var(--primar-mork);
   font-weight: 600;
+}
+
+.projekt-detalj .projekt-tillbaka {
+  color: var(--bla-3);
+  font-weight: 400;
+  text-decoration: none;
+}
+
+.projekt-detalj .projekt-tillbaka:hover {
+  color: var(--bla-2);
+  text-decoration: underline;
+}
+
+.dark .projekt-detalj .projekt-tillbaka {
+  color: var(--bla-1);
+}
+
+.dark .projekt-detalj .projekt-tillbaka:hover {
+  color: var(--bla-0);
 }
 
 .projekt-detalj a:focus-visible {

@@ -70,7 +70,9 @@ function ProjektDetalj() {
           <li key={t}>{t}</li>
         ))}
       </ul>
-      <Link to="/projekt">Till alla projekt</Link>
+      <Link className="projekt-tillbaka" to="/projekt">
+        Till alla projekt
+      </Link>
     </section>
   );
 }
