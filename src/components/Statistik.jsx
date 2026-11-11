@@ -1,7 +1,40 @@
-import projektLista from "../data/projekt.json";
+import { useEffect, useState } from "react";
 import "./Statistik.css";
 
+const SERVER_URL = "http://localhost:3001/projekt";
+
 function Statistik() {
+  const [projektLista, setProjektLista] = useState([]);
+  const [laddar, setLaddar] = useState(true);
+  const [fel, setFel] = useState("");
+
+  useEffect(() => {
+    async function hamtaProjekt() {
+      try {
+        const svar = await fetch(SERVER_URL);
+        if (!svar.ok) {
+          throw new Error(`Servern svarade med status ${svar.status}`);
+        }
+        const json = await svar.json();
+        setProjektLista(json);
+      } catch {
+        setFel("Kunde inte hämta statistiken från servern. Kontrollera att min-server körs.");
+      } finally {
+        setLaddar(false);
+      }
+    }
+
+    hamtaProjekt();
+  }, []);
+
+  if (laddar) {
+    return <p>Laddar statistik...</p>;
+  }
+
+  if (fel) {
+    return <p role="alert">{fel}</p>;
+  }
+
   // Börja med en tom räknartavla och gå igenom projekten ett i taget.
   const antalPerTeknik = projektLista.reduce((summa, projekt) => {
     // Varje projekt kan ha flera tekniker, så räkna dem var för sig.
