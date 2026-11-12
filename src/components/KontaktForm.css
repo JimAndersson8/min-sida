@@ -109,13 +109,17 @@
   cursor: not-allowed;
 }
 
-/* Tack- och felmeddelanden ligger i en vit ruta, så att färgerna syns mot den blå bakgrunden */
+/* Meddelanderutan använder sidans yta; i mörkt läge bevaras den vita rutan. */
 .meddelande {
   margin-top: 16px;
   padding: 12px 14px;
-  background-color: var(--bla-0);
+  background-color: var(--bakgrund);
   border-radius: 8px;
   font-weight: 600;
+}
+
+.dark .meddelande {
+  background-color: var(--bla-0);
 }
 
 .meddelande.tack {

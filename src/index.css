@@ -15,7 +15,7 @@
   --bla-7: #000000;
 
   /* ── Lager 2: roller – vad färgen används till ── */
-  --bakgrund: var(--bla-0);   /* sidans botten */
+  --bakgrund: var(--bla-1);   /* sidans botten och ljusa fält i ljust läge */
   --yta: var(--bla-1);        /* ljusa block, fält, kodrutor */
   --kant: var(--bla-2);       /* kantlinjer och avdelare */
   --primar: var(--bla-3);     /* navbar, knappar */

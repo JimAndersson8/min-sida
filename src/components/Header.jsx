@@ -10,7 +10,7 @@ function Header() {
       </div>
       <div className="header-knappar">
         <Knapp text="Se mina projekt" lank="/projekt" />
-        <Knapp text="Kontakta mig" lank="#kontakt" />
+        <Knapp text="Kontakta mig" lank="/kontakt" />
       </div>
     </header>
   );

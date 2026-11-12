@@ -9,6 +9,7 @@
 }
 
 .projects-api h1 {
+  margin-bottom: 48px;
   color: var(--text-h);
 }
 
