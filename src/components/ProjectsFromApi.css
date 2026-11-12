@@ -1,0 +1,68 @@
+.projects-api {
+  flex: 1;
+  padding: 40px 32px 64px;
+  background: linear-gradient(180deg, var(--kant), var(--primar));
+}
+
+.dark .projects-api {
+  background: linear-gradient(180deg, var(--bla-3), var(--bla-5));
+}
+
+.projects-api h1 {
+  color: var(--text-h);
+}
+
+.projects-api > p {
+  margin: 0 0 20px;
+  color: var(--text-h);
+}
+
+.projects-api-lista {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px 20px;
+}
+
+.api-card {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 12px;
+}
+
+.delete-button {
+  min-height: 44px;
+  padding: 10px 16px;
+  border: 1px solid var(--primar-mork);
+  border-radius: 8px;
+  background: var(--primar-mork);
+  color: var(--vit);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.delete-button:hover {
+  filter: brightness(1.12);
+}
+
+.delete-button:focus-visible {
+  outline: 3px solid var(--text-h);
+  outline-offset: 3px;
+}
+
+@media (max-width: 1000px) {
+  .projects-api-lista {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .projects-api {
+    padding-inline: 20px;
+  }
+
+  .projects-api-lista {
+    grid-template-columns: 1fr;
+  }
+}

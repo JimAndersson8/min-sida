@@ -15,6 +15,13 @@
 .projekt > h2 {
   grid-column: 1 / -1;
   color: var(--text-h);
+  font-size: 56px;
+}
+
+@media (max-width: 1024px) {
+  .projekt > h2 {
+    font-size: 36px;
+  }
 }
 
 /* Korten ligger i ett eget grid, så att de blir tre per rad */

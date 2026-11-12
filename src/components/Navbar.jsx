@@ -29,6 +29,7 @@ function Navbar() {
           <Link to="/" onClick={stangMeny}>Hem</Link>
           <Link to="/om-mig" onClick={stangMeny}>Om mig</Link>
           <Link to="/projekt" onClick={stangMeny}>Projekt</Link>
+          <Link to="/projekt-api" onClick={stangMeny}>Projekt från API</Link>
           <Link to="/kontakt" onClick={stangMeny}>Kontakt</Link>
         </div>
         <DarkModeKnapp />
