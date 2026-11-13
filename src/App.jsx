@@ -2,6 +2,7 @@ import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import KontaktForm from "./components/KontaktForm.jsx";
+import KontaktBackend from "./components/KontaktBackend.jsx";
 import Footer from "./components/Footer";
 import Hem from "./pages/Hem";
 import OmMig from "./pages/OmMig";
@@ -21,6 +22,7 @@ function App() {
         <Route path="/projekt" element={<Projektlista />} />
         <Route path="/projekt/:id" element={<ProjektDetalj />} />
         <Route path="/kontakt" element={<KontaktForm />} />
+        <Route path="/kontakt-api" element={<KontaktBackend />} />
         <Route path="/server" element={<MinServer />} />
         <Route path="/projekt-api" element={<ProjectsFromApi />} />
         <Route path="*" element={<EjHittad />} />
