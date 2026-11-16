@@ -10,6 +10,8 @@ import Projektlista from "./pages/Projektlista";
 import ProjektDetalj from "./pages/ProjektDetalj";
 import EjHittad from "./pages/EjHittad";
 import MinServer from "./components/MinServer.jsx";
+import GrafiskaProjekt from "./pages/GrafiskaProjekt";
+import GrafiskKategori from "./pages/GrafiskKategori";
 import ProjectsFromApi from "./components/ProjectsFromApi.jsx";
 
 function App() {
@@ -21,6 +23,8 @@ function App() {
         <Route path="/om-mig" element={<OmMig />} />
         <Route path="/projekt" element={<Projektlista />} />
         <Route path="/projekt/:id" element={<ProjektDetalj />} />
+        <Route path="/grafiska-projekt" element={<GrafiskaProjekt />} />
+        <Route path="/grafiska-projekt/:slug" element={<GrafiskKategori />} />
         <Route path="/kontakt" element={<KontaktForm />} />
         <Route path="/kontakt-api" element={<KontaktBackend />} />
         <Route path="/server" element={<MinServer />} />

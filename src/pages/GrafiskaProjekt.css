@@ -1,0 +1,189 @@
+.grafiska-sida {
+  padding: 48px 32px 64px;
+  color: var(--text-h);
+  text-align: left;
+  background: linear-gradient(180deg, var(--kant), var(--bakgrund));
+  flex: 1;
+}
+
+.dark .grafiska-sida {
+  background: linear-gradient(180deg, var(--bla-3), var(--bakgrund));
+}
+
+.grafiska-intro {
+  margin-bottom: 32px;
+  text-align: center;
+}
+
+.grafiska-intro h1 {
+  margin: 8px 0 12px;
+}
+
+.grafiska-overrad {
+  color: var(--text-h);
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.grafiska-sida > section > h2 {
+  margin-bottom: 20px;
+}
+
+.grafiska-kategorier,
+.grafiska-galleri {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.grafisk-kategori-kort {
+  overflow: hidden;
+  border: 1px solid var(--kant);
+  border-radius: 12px;
+  background: var(--bla-6);
+  color: var(--bla-0);
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgb(0 0 0 / 20%);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.grafisk-kategori-kort:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 18px rgb(0 0 0 / 25%);
+}
+
+.grafisk-kategori-kort:focus-visible,
+.grafisk-tillbaka:focus-visible,
+.grafisk-filter:focus-visible {
+  outline: 3px solid var(--primar-mork);
+  outline-offset: 3px;
+}
+
+.grafisk-kategori-kort > img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.grafisk-kategori-info {
+  padding: 16px;
+}
+
+.grafisk-kategori-info h3 {
+  margin: 0 0 8px;
+  font-size: 1.2rem;
+}
+
+.grafisk-kategori-info p {
+  margin-bottom: 12px;
+}
+
+.grafisk-kategori-info span {
+  color: var(--bla-1);
+  font-size: 0.9rem;
+}
+
+.grafisk-tillbaka {
+  display: inline-block;
+  margin-bottom: 16px;
+  color: var(--primar-mork);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.dark .grafisk-tillbaka {
+  color: var(--bla-1);
+}
+
+.grafisk-tillbaka:hover {
+  text-decoration: underline;
+}
+
+.grafiska-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.grafisk-filter {
+  min-height: 44px;
+  padding: 8px 16px;
+  border: 1px solid var(--primar-mork);
+  border-radius: 999px;
+  background: var(--bakgrund);
+  color: var(--text-h);
+  font: inherit;
+  cursor: pointer;
+}
+
+.grafisk-filter:hover {
+  background: var(--yta);
+}
+
+.grafisk-filter.aktiv {
+  background: var(--primar-mork);
+  color: var(--vit);
+}
+
+.grafiskt-verk {
+  overflow: hidden;
+  border: 1px solid var(--kant);
+  border-radius: 12px;
+  background: var(--bakgrund);
+  box-shadow: 0 4px 12px rgb(0 0 0 / 15%);
+}
+
+.grafiskt-verk > img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.grafiskt-verk-info {
+  padding: 16px;
+}
+
+.grafiskt-verk-info h2 {
+  margin-bottom: 8px;
+  font-size: 1.15rem;
+}
+
+.grafiskt-verk-info ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 12px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.grafiskt-verk-info li {
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: var(--primar-mork);
+  color: var(--vit);
+  font-size: 0.85rem;
+}
+
+@media (max-width: 900px) {
+  .grafiska-kategorier,
+  .grafiska-galleri {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .grafiska-sida {
+    padding: 32px 20px 48px;
+  }
+
+  .grafiska-kategorier,
+  .grafiska-galleri {
+    grid-template-columns: 1fr;
+  }
+}

@@ -132,6 +132,7 @@ function Projekt() {
                   titel={p.titel}
                   beskrivning={p.beskrivning}
                   teknik={p.teknik.join(", ")}
+                  lank={p.id === 4 ? "/grafiska-projekt" : undefined}
                 />
               ))}
             </div>

@@ -12,8 +12,19 @@
 }
 
 .projekt-kort:hover {
-  transform: translateY(-4px);                 /* kortet lyfts vid hover */
+  transform: translateY(-4px);                 /* gör lyftet mjukt */
 }
+
+.projekt-kort-lank {
+  color: var(--bla-0);
+  text-decoration: none;
+}
+
+.projekt-kort-lank:focus-visible {
+  outline: 3px solid var(--vit);
+  outline-offset: 3px;
+}
+
 
 .projekt-bild {
   flex: 1 1 0;                /* tar all ledig höjd över texten */
