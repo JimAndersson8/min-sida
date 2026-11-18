@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import ProjektKort from "./ProjektKort";
-import bild1 from "../assets/nature1.jpg";
-import bild2 from "../assets/natur2.jpg";
-import bild3 from "../assets/natur3.jpg";
+import bild1 from "../assets/natur1.webp";
+import bild2 from "../assets/natur2.webp";
+import bild3 from "../assets/natur3.webp";
 import bild4 from "../assets/comfyui1.jpg";
 import "./ProjectsFromApi.css";
 
@@ -11,7 +11,7 @@ const SERVER_URL = "http://localhost:3001/projekt";
 // API:t skickar bildnamn som text. Den här uppslagningen kopplar namnet
 // till den bildfil som Vite har importerat.
 const bilder = {
-  "nature1.jpg": bild1,
+  "natur1.jpg": bild1,
   "natur2.jpg": bild2,
   "natur3.jpg": bild3,
   "comfyui1.jpg": bild4,

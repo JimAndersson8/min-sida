@@ -1,17 +1,17 @@
 import { useEffect, useState } from 'react';
 import './Projekt.css';
 import ProjektKort from './ProjektKort';
-import bild1 from '../assets/nature1.jpg';
-import bild2 from '../assets/natur2.jpg';
-import bild3 from '../assets/natur3.jpg';
+import bild1 from '../assets/natur1.webp';
+import bild2 from '../assets/natur2.webp';
+import bild3 from '../assets/natur3.webp';
 import bild4 from '../assets/comfyui1.jpg';
 
 const SERVER_URL = "http://localhost:3001/projekt";
 
 // JSON kan bara innehålla data, inte variabler. Därför står bilden som en sträng
-// i API:et ("nature1.jpg"), och här slår vi upp vilken importerad bild den betyder.
+// i API:et ("natur1.jpg"), och här slår vi upp vilken importerad bild den betyder.
 const bilder = {
-  "nature1.jpg": bild1,
+  "natur1.jpg": bild1,
   "natur2.jpg": bild2,
   "natur3.jpg": bild3,
   "comfyui1.jpg": bild4,

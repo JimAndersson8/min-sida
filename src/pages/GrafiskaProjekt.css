@@ -56,7 +56,11 @@
 
 .grafisk-kategori-kort:focus-visible,
 .grafisk-tillbaka:focus-visible,
-.grafisk-filter:focus-visible {
+.grafisk-filter:focus-visible,
+.grafiskt-verk-knapp:focus-visible,
+.grafisk-visa-fler:focus-visible,
+.grafisk-dialog-stang:focus-visible,
+.grafisk-dialog-pil:focus-visible {
   outline: 3px solid var(--primar-mork);
   outline-offset: 3px;
 }
@@ -130,6 +134,9 @@
 }
 
 .grafiskt-verk {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
   overflow: hidden;
   border: 1px solid var(--kant);
   border-radius: 12px;
@@ -137,37 +144,107 @@
   box-shadow: 0 4px 12px rgb(0 0 0 / 15%);
 }
 
-.grafiskt-verk > img {
+.grafiskt-verk-knapp {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: #2b2b2b;
+  cursor: zoom-in;
+}
+
+.grafiskt-verk-knapp img {
   display: block;
   width: 100%;
   aspect-ratio: 4 / 3;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .grafiskt-verk-info {
-  padding: 16px;
+  padding: 12px 16px;
+  font-size: 0.95rem;
 }
 
-.grafiskt-verk-info h2 {
-  margin-bottom: 8px;
-  font-size: 1.15rem;
-}
-
-.grafiskt-verk-info ul {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin: 12px 0 0;
-  padding: 0;
-  list-style: none;
-}
-
-.grafiskt-verk-info li {
-  padding: 4px 10px;
+.grafisk-visa-fler,
+.grafisk-dialog-stang {
+  min-height: 44px;
+  padding: 8px 24px;
+  border: 1px solid var(--primar-mork);
   border-radius: 999px;
   background: var(--primar-mork);
   color: var(--vit);
-  font-size: 0.85rem;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.grafisk-visa-fler {
+  display: block;
+  margin: 28px auto 0;
+}
+
+.grafisk-visa-fler:hover,
+.grafisk-dialog-stang:hover {
+  filter: brightness(1.12);
+}
+
+.grafisk-dialog {
+  width: min(1100px, 92vw);
+  max-height: 92vh;
+  padding: 16px;
+  border: 1px solid var(--kant);
+  border-radius: 12px;
+  background: var(--bakgrund);
+  color: var(--text-h);
+}
+
+.grafisk-dialog::backdrop {
+  background: rgb(0 0 0 / 75%);
+}
+
+.grafisk-dialog-bildrad {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  gap: 12px;
+  align-items: center;
+}
+
+.grafisk-dialog-pil {
+  width: 44px;
+  height: 52px;
+  border: 1px solid var(--kant);
+  border-radius: 8px;
+  background: var(--bla-3);
+  color: var(--vit);
+  font-size: 2rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.grafisk-dialog-pil:hover:not(:disabled) {
+  background: var(--primar-mork);
+}
+
+.grafisk-dialog-pil:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.grafisk-dialog img {
+  display: block;
+  width: 100%;
+  max-height: 74vh;
+  object-fit: contain;
+  background: #2b2b2b;
+}
+
+.grafisk-dialog-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 12px;
 }
 
 @media (max-width: 900px) {

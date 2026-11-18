@@ -1,38 +1,21 @@
-import comfyUiExempel from "../assets/comfyui1.jpg";
+const SERVER_URL = "http://localhost:3001/galleri/kategorier";
 
-// Tillfälligt innehåll som visar hur kategorier och verk hänger ihop.
-// Byt ut exempelbilden och texten när du har valt dina portfolioverk.
-export const grafiskaKategorier = [
-  {
-    slug: "comfyui",
-    namn: "ComfyUI",
-    beskrivning: "Exempel på bilder och arbetsflöden skapade med ComfyUI.",
-    omslagsbild: comfyUiExempel,
-    verk: [
-      {
-        id: "comfyui-exempel",
-        titel: "Exempelbild – ComfyUI-workflow",
-        beskrivning: "Tillfällig bild medan vi bygger upp galleriet.",
-        bild: comfyUiExempel,
-        alt: "Skärmbild av ett arbetsflöde i ComfyUI",
-        taggar: ["ComfyUI", "Workflow"],
-      },
-    ],
-  },
-  {
-    slug: "photoshop",
-    namn: "Photoshop",
-    beskrivning: "Exempel på bilder redigerade i Photoshop.",
-    omslagsbild: comfyUiExempel,
-    verk: [
-      {
-        id: "photoshop-exempel",
-        titel: "Exempelbild – tillfällig platshållare",
-        beskrivning: "Vi använder samma bild tills du väljer ett Photoshop-exempel.",
-        bild: comfyUiExempel,
-        alt: "Tillfällig exempelbild av ett arbetsflöde i ComfyUI",
-        taggar: ["Photoshop", "Exempel"],
-      },
-    ],
-  },
-];
+async function hamta(url) {
+  const response = await fetch(url);
+
+  if (!response.ok) {
+    const fel = new Error("Servern svarade med " + response.status);
+    fel.status = response.status;
+    throw fel;
+  }
+
+  return response.json();
+}
+
+export function hamtaKategorier() {
+  return hamta(SERVER_URL);
+}
+
+export function hamtaKategori(slug) {
+  return hamta(`${SERVER_URL}/${encodeURIComponent(slug)}`);
+}

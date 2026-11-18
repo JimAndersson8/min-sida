@@ -1,28 +1,83 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import { grafiskaKategorier } from "../data/grafiskaProjekt";
+import { hamtaKategori } from "../data/grafiskaProjekt";
 import "./GrafiskaProjekt.css";
+
+const ANTAL_PER_SIDA = 24;
 
 function GrafiskKategori() {
   const { slug } = useParams();
-  const kategori = grafiskaKategorier.find((item) => item.slug === slug);
-  const [valdTagg, setValdTagg] = useState("Alla");
+  const [kategori, setKategori] = useState(null);
+  const [status, setStatus] = useState("loading");
+  const [antalSynliga, setAntalSynliga] = useState(ANTAL_PER_SIDA);
+  const [valtVerk, setValtVerk] = useState(null);
+  const dialogRef = useRef(null);
+  const bildIndex = kategori?.items.findIndex((verk) => verk.id === valtVerk?.id) ?? -1;
+  const forraVerket = bildIndex > 0 ? kategori.items[bildIndex - 1] : null;
+  const nastaVerket = bildIndex < kategori?.items.length - 1 ? kategori.items[bildIndex + 1] : null;
 
-  if (!kategori) {
+  useEffect(() => {
+    async function fetchKategori() {
+      setStatus("loading");
+      setAntalSynliga(ANTAL_PER_SIDA);
+
+      try {
+        setKategori(await hamtaKategori(slug));
+        setStatus("klar");
+      } catch (fel) {
+        setStatus(fel.status === 404 ? "saknas" : "fel");
+      }
+    }
+
+    fetchKategori();
+  }, [slug]);
+
+  useEffect(() => {
+    function hanteraPiltangenter(event) {
+      if (!dialogRef.current?.open) return;
+      if (event.key === "ArrowLeft" && forraVerket) {
+        event.preventDefault();
+        setValtVerk(forraVerket);
+      }
+      if (event.key === "ArrowRight" && nastaVerket) {
+        event.preventDefault();
+        setValtVerk(nastaVerket);
+      }
+    }
+
+    window.addEventListener("keydown", hanteraPiltangenter);
+    return () => window.removeEventListener("keydown", hanteraPiltangenter);
+  }, [forraVerket, nastaVerket]);
+
+  useEffect(() => {
+    const dialog = dialogRef.current;
+    if (!dialog) return;
+
+    if (valtVerk && !dialog.open) {
+      dialog.showModal();
+    } else if (!valtVerk && dialog.open) {
+      dialog.close();
+    }
+  }, [valtVerk]);
+
+  if (status !== "klar") {
     return (
       <main className="grafiska-sida">
-        <p role="alert">Kategorin kunde inte hittas.</p>
-        <Link className="grafisk-tillbaka" to="/grafiska-projekt">
-          Till alla kategorier
-        </Link>
+        {status === "loading" && <p>Hämtar bilder...</p>}
+        {status === "saknas" && <p role="alert">Kategorin kunde inte hittas.</p>}
+        {status === "fel" && (
+          <p role="alert">Får inget svar från servern. Är den igång?</p>
+        )}
+        {status !== "loading" && (
+          <Link className="grafisk-tillbaka" to="/grafiska-projekt">
+            Till alla kategorier
+          </Link>
+        )}
       </main>
     );
   }
 
-  const taggar = [...new Set(kategori.verk.flatMap((verk) => verk.taggar))];
-  const synligaVerk = kategori.verk.filter(
-    (verk) => valdTagg === "Alla" || verk.taggar.includes(valdTagg),
-  );
+  const synligaVerk = kategori.items.slice(0, antalSynliga);
 
   return (
     <main className="grafiska-sida">
@@ -31,44 +86,80 @@ function GrafiskKategori() {
       </Link>
       <header className="grafiska-intro">
         <p className="grafiska-overrad">Grafiska projekt</p>
-        <h1>{kategori.namn}</h1>
-        <p>{kategori.beskrivning}</p>
+        <h1>{kategori.name}</h1>
+        <p>{kategori.count} bilder i kategorin.</p>
       </header>
 
-      <div className="grafiska-filter" aria-label="Filtrera verk efter tagg">
-        {["Alla", ...taggar].map((tagg) => (
-          <button
-            className={valdTagg === tagg ? "grafisk-filter aktiv" : "grafisk-filter"}
-            key={tagg}
-            type="button"
-            aria-pressed={valdTagg === tagg}
-            onClick={() => setValdTagg(tagg)}
-          >
-            {tagg}
-          </button>
+      <div className="grafiska-galleri">
+        {synligaVerk.map((verk) => (
+          <figure className="grafiskt-verk" key={verk.id}>
+            <button
+              className="grafiskt-verk-knapp"
+              type="button"
+              onClick={() => setValtVerk(verk)}
+            >
+              <img src={verk.thumbnailUrl} alt={verk.title} loading="lazy" />
+            </button>
+            <figcaption className="grafiskt-verk-info">{verk.title}</figcaption>
+          </figure>
         ))}
       </div>
 
-      {synligaVerk.length === 0 ? (
-        <p>Det finns inga verk med den här taggen ännu.</p>
-      ) : (
-        <div className="grafiska-galleri">
-          {synligaVerk.map((verk) => (
-            <article className="grafiskt-verk" key={verk.id}>
-              <img src={verk.bild} alt={verk.alt} loading="lazy" />
-              <div className="grafiskt-verk-info">
-                <h2>{verk.titel}</h2>
-                <p>{verk.beskrivning}</p>
-                <ul aria-label="Taggar">
-                  {verk.taggar.map((tagg) => (
-                    <li key={tagg}>{tagg}</li>
-                  ))}
-                </ul>
-              </div>
-            </article>
-          ))}
-        </div>
+      {antalSynliga < kategori.items.length && (
+        <button
+          className="grafisk-visa-fler"
+          type="button"
+          onClick={() => setAntalSynliga((antal) => antal + ANTAL_PER_SIDA)}
+        >
+          Visa fler
+        </button>
       )}
+
+      <dialog
+        className="grafisk-dialog"
+        ref={dialogRef}
+        aria-label={valtVerk ? valtVerk.title : "Förstorad bild"}
+        onClose={() => setValtVerk(null)}
+        onClick={(event) => {
+          if (event.target === dialogRef.current) setValtVerk(null);
+        }}
+      >
+        {valtVerk && (
+          <>
+            <div className="grafisk-dialog-bildrad">
+              <button
+                className="grafisk-dialog-pil"
+                type="button"
+                aria-label="Visa föregående bild"
+                disabled={!forraVerket}
+                onClick={() => setValtVerk(forraVerket)}
+              >
+                ‹
+              </button>
+              <img src={valtVerk.originalUrl} alt={valtVerk.title} />
+              <button
+                className="grafisk-dialog-pil"
+                type="button"
+                aria-label="Visa nästa bild"
+                disabled={!nastaVerket}
+                onClick={() => setValtVerk(nastaVerket)}
+              >
+                ›
+              </button>
+            </div>
+            <div className="grafisk-dialog-info">
+              <p>{valtVerk.title} ({bildIndex + 1} av {kategori.items.length})</p>
+              <button
+                className="grafisk-dialog-stang"
+                type="button"
+                onClick={() => setValtVerk(null)}
+              >
+                Stäng
+              </button>
+            </div>
+          </>
+        )}
+      </dialog>
     </main>
   );
 }
