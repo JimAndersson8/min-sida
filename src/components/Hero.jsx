@@ -1,5 +1,5 @@
 import "./Hero.css";
-import herobild from "../assets/Hero1.jpg";
+import herobild from "../assets/Hero1.webp";
 import { namn } from "../data/installningar";
 
 function Hero() {
